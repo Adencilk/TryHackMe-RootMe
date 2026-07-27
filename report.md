@@ -35,11 +35,11 @@
 
 ----------
  # Tools Used
-  -Nmap
-  -Gobuster / FFUF
-  -Netcat
-  -Bash
-  -GTOBins
+  - Nmap
+  - Gobuster / FFUF
+  - Netcat
+  - Bash
+  - GTOBins
 
   -----------
 
