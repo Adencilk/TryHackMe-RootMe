@@ -35,16 +35,32 @@ The nmap scan identified two open TCP ports:
 | Port   | Service  | Version            |
 |--------|----------|--------------------|
 | 22     | SSH      | OpenSSH            |
-|80      | HTTP     | Apache httpd 2.4.42|
+| 80      | HTTP     | Apache httpd 2.4.42|
 
 ### Analysis
 The target exposes an SSH service on port 22 and a web sever on port 80. Since SSH requires valid credentials, the web server presents the most promising initial attack surface. The next phase will focus on enumerating the web application to identify hidden directories, files, and potential vulnerabilities.
 
-
-
-
  # Phase 2 - Enumeration
+ ### Findings
+ Gobuster identified several accessible directories and files on the web server.
+ | path        |    Status        |  Description                    |
+ |-------------|------------------|---------------------------------|
+ |  /.htaccess |          403     | Restricted                      |
+ |  /.htpasswd |          403     | Restricted                      |
+ |  /.hta      |          403     | Restricted                      |
+ |  /css       |          301     | CSS Directory                   |
+ |  /index.php |          200     | Main Web Application            |
+ |  /js        |          301     | JavaScript Directory            |
+ |   /panel    |          301     | Potential file upload           |
+ |  /server-status |      403     | Apache status page(restricted)  |
+ |  /uploads      |       301     | Uploads directory               |
 
+ The `/panel/` and `/uploads` directories appear to be the most promising targets for further investigation.
+
+ ### Analysis
+ Directory enumeration revealed an upload panel (`/panel`) and an uploads directory (`/uploads`). These may allow file uploads and could potentially be exploited to gain remote code execution if file type validation is insufficient.
+ 
+ ![Gobuster Results](screenshots/gobuster_rootme.png)
 
 
  # Phase 3 - Initial Access
