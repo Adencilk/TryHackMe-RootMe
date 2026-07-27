@@ -4,18 +4,18 @@
 
 --------------
 ## Scope
- -Platform: TryHackMe
- -Room: RootMe
- -Target: Virtual Machine
+ - Platform: TryHackMe
+ - Room: RootMe
+ - Target: Virtual Machine
 
  --------
 
  ## Methodology
- 1.Reconnaissance
- 2.Enumeration
- 3.Initial Acess
- 4.Privilege Escalation
- 5.Post Exploitation
+ 1. Reconnaissance
+ 2. Enumeration
+ 3. Initial Acess
+ 4. Privilege Escalation
+ 5. Post Exploitation
  
  --------
 
