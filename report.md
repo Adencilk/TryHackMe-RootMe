@@ -62,6 +62,12 @@ The target exposes an SSH service on port 22 and a web sever on port 80. Since S
  
  ![Gobuster Results](screenshots/gobuster_rootme.png)
 
+ ### Upload Panel
+
+ The `/panel` endpoint presented a file upload form, indicating that users can upload files to the web server. Combined with the discovery of the `/uploads` directory, this suggests a possible file upload vulnerability that may be leveraged for remote code execution.
+
+ ![Panel URL](screenshots/rootme_panel.png)
+
 
  # Phase 3 - Initial Access
 
